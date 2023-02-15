@@ -1,0 +1,416 @@
+body{
+    background-color: #000000;
+    width: 100%;
+    position: relative;
+
+        // 팝업창
+        div.Popup-box1{
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0%;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            
+            &.active{
+                display:flex;
+            }
+           
+            
+    
+            div.Popup-box2{
+                margin: 0 auto;
+                width: 651px;
+                height: 670px;
+                background-color: #000000;
+                border: 2px solid #7C6D56;
+                         
+                
+    
+                .Cancel{
+                    margin-left: 601px;
+                    margin-top: 20px;
+                }
+    
+                ul.Popup-box-list{
+                    
+                    width: 77%;
+                    display: block;
+                    margin: 0 auto;       
+    
+                    li{
+                        width: 100%;
+                        h3{
+                            font-size: 30px;
+                            margin-bottom: 30px;
+                            line-height: 25px;
+                        }
+                        img.Popup-img{
+                            margin-bottom: 20px;
+                        }
+    
+                        div.Popup-box-listText{
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: space-between;
+                            font-size: 18px;
+                            font-weight: bold;
+                            margin-top: 20px;
+                            margin-bottom: 30px;
+    
+                            form{
+                                display: flex;
+                                margin: 0;
+    
+                                span{
+                                    color: #ffffff;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+    
+                        p.story{
+                            font-size: 16px;
+                            font-weight: bold;
+                            display: flex;
+                            flex-wrap: wrap;
+    
+                            span{
+                                margin-top: 10px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+
+    // header
+    header{
+        width: 67.3%;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .header-Space{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 50px;
+            
+         // 메인 제목
+            h1{
+                font-size: 40px;
+                font-weight: bold;
+                line-height: 40px;
+                color:#ffffff;
+                        
+            } 
+
+            h1::after{
+                content: '';
+                border-bottom: 2px solid #7C6D56;
+                width: 446px;
+                display: block;
+                margin-top: 14px;
+            }
+
+             // 검색창
+                div.input-box{
+                    position: relative;
+
+                    input{
+                        width: 354px;
+                        height: 5.5vh;
+                        background-color: #1B1B1B;
+                        border: inherit;
+                        font-size: 20px;
+                        padding-right: 50px;
+                        background-position: 314px center;
+                        box-sizing: border-box;
+                        color: #ffffff;
+                        padding-left: 6px;
+                    }
+
+                    img{
+                        position: absolute;
+                        top: 15px;
+                        left: 310px;
+                        margin: 0;     
+                    }
+                }             
+        }
+
+        form{
+            margin-bottom: 100px;    
+        }
+    }
+    // main
+    main{
+        width: 67.3%;
+        margin: 0 auto;
+
+    // 영화장르버튼
+        section{
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            margin-bottom: 80px;
+            
+            
+            
+            button.btn01{
+                width: 80px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+            button.on{
+                color: #ffffff;
+                background-color: #82663e !important;
+            }
+
+
+            button.btn02{
+                width: 130px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+
+
+
+            button.btn03{
+                width: 130px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+
+
+
+            button.btn04{
+                width: 90px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+
+
+            button.btn05{
+                width: 110px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+
+
+            button.btn06{
+                width: 110px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+
+
+            button.btn07{
+                width: 110px;
+                height: 35px;
+                border: 2px solid #7C6D56;
+                color: #7C6D56;
+                font-size: 20px;
+                font-weight: 550;
+                background-color: transparent;
+                border-radius: 15px;
+                
+            }
+
+        }
+    
+    // 영화릿트
+        #cardList{
+            width: 100%;
+            margin-bottom: 100px;
+
+            .card01{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 80px;
+
+                li{
+                    width: 300px;
+                   h2{
+                    font-size: 25px;
+                    font-weight: bold;
+                    margin-bottom: 25px;
+                    text-align: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                   }
+
+                   .movieImg{
+                     width: 100%;
+                     height: 273px;
+                     border-radius: 15%;
+                     margin-bottom: 25px;
+                     transition: all 0.2s linear;  
+                   }
+                   .movieImg:hover{
+                    transform: scale(1.15);
+                   }
+
+
+                   .card01Text{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    p{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    form{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        
+                        img{
+                            margin-right: 15px;
+                        }
+
+                        span{
+                            color: #ffffff;
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                   }
+
+                }
+            }
+
+        }  
+
+    // 영화페이지 이동 버튼
+       div.pageNumber{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 100px;
+
+         a{
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+         }
+
+         &a.on{
+            color: #82663e;
+         }
+       }   
+    }
+
+    // footer
+    footer{
+        width: 67.3%;
+        margin: 0 auto;
+        position: relative;
+
+        div.footer-icon::after{
+            content: "";
+            border-top: 1px solid #7C6D56;
+            width: 100%;
+            position: absolute;
+            top: -80px;          
+        }
+
+     // 아이콘 sns
+        div.footer-icon{
+            width: 100%;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            vertical-align: baseline;
+            margin-top: 80px;
+            position: relative;
+            margin-bottom: 100px;
+            
+
+            a{
+                margin-right: 18px;
+                img{
+                    display: block;
+                    
+                }
+            }   
+        }
+
+    // 위로가기 버튼
+        button.goto-top{
+            color: transparent;
+            width: 3rem;
+            height: 3rem;
+            background-color: #111;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 119px;
+            right: 3rem;
+            z-index: 100px;
+            border: 0;
+            outline: 0;
+        }
+
+    // 푸터 정보
+        p.infor{
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 100px;
+        }
+    }
+
+}

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./index.js"></script>
+    <script src="./fetchManage.js"></script>
+
+    <link rel="stylesheet" href="./css/inc.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+     <!-- 팝업창-->
+     <div class="Popup-box1">
+        <div class="Popup-box2">
+
+            <img src="./img/Close.svg" class="Cancel" onclick="popClose();">
+
+            <ul class="Popup-box-list">
+                <li>
+                    <h3>Interstellar</h3>
+                    <img src="./img/movie-img.jpg" alt="이미지" class="Popup-img">
+                    <div class="Popup-box-listText">
+                        <p>2020-09-22</p>
+                        <p>5000.023<span>관객수</span></p>
+                        <form>
+                            <img src="./img/Favorite.svg">
+                            <span>8.68</span>
+                        </form>
+                    </div>
+                    <p class="story">
+                        줄거리
+                        <span>In response to a global rise in demonic possessions,
+                            the Catholic Church reopens exorcism schools to train 
+                            priests in the Rite of Exorcism. On this spiritual 
+                            battlefield, an unlikely warrior rises: a 
+                        </span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <header>
+        <div class="header-Space">
+            <h1>MOVIE INTRODUCTOIN</h1>
+
+            <div class="input-box">
+              <input id="searchInput" type="text" placeholder="영화제목">
+              <img id="searchImg"src="./img/Vector.svg">
+            </div>
+        </div>
+
+  <!-- 메인 배경-->
+        <form>
+            <img src="./img/main-img.jpg">
+        </form>
+
+    </header>
+    
+    <main>
+  <!-- 영화장르버튼-->
+        <section id="filterArea">
+                <button class="btn01" value="0" onclick="moveFilter(this);">All</button>
+           
+                <button class="btn02" value="12" onclick="moveFilter(this);">Adventure</button>
+        
+                <button class="btn03" value="16" onclick="moveFilter(this);">Animation</button>
+            
+                <button class="btn04" value="10402" onclick="moveFilter(this);">Music</button>
+            
+                <button class="btn05" value="35" onclick="moveFilter(this);">Comedy</button>
+            
+                <button class="btn06" value="28" onclick="moveFilter(this);">Action</button>
+            
+                <button class="btn07" value="27" onclick="moveFilter(this);">Horror</button>
+        </section>
+
+  <!-- 영화리스트-->
+        <div id="cardList">
+
+<!--            <ul id="card01">-->
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                -->
+<!--            </ul> -->
+
+<!--            <ul id="card02">-->
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                   -->
+
+
+<!--            </ul>-->
+<!--            -->
+<!--            <ul id="card03">-->
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                   -->
+
+
+<!--            </ul> -->
+
+<!--            <ul id="card04">-->
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                   -->
+
+
+<!--            </ul> -->
+
+<!--            <ul id="card05">-->
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <h2>Interstellar</h2>-->
+<!--                    <a href="#"><img id="movieImg" src="./img/movie-img.jpg"></a>-->
+
+<!--                    <div id="card01Text">-->
+<!--                        <p>2020-09-22</p>-->
+<!--                        <form>-->
+<!--                            <img src="./img/Favorite.svg">-->
+<!--                            <span>8.68</span>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul> -->
+
+        </div> 
+
+    <!-- 영화페이지 이동 버튼-->
+        <div class="pageNumber">
+<!--            <a href="" id="first_page" onclick="paging(this);"><<</a>-->
+<!--            <a href="" id="prev_page"  onclick="paging(this);"><</a>-->
+            <a href="" onclick="paging(this);">1</a>
+            <a href="" onclick="paging(this);">2</a>
+            <a href="" onclick="paging(this);">3</a>
+            <a href="" onclick="paging(this);">4</a>
+            <a href="" onclick="paging(this);">5</a>
+            <a href="" onclick="paging(this);">6</a>
+            <a href="" onclick="paging(this);">7</a>
+            <a href="" onclick="paging(this);">8</a>
+            <a href="" onclick="paging(this);">9</a>
+            <a href="" onclick="paging(this);">10</a>
+<!--            <a href="" id="next_page" onclick="paging(this);">></a>-->
+<!--            <a href="" id="last_page" onclick="paging(this);">>></a>-->
+        </div>
+    </main>
+
+    <footer>
+    <!-- 아이콘 sns-->
+        <div class="footer-icon">
+            <a href=""><img src="./img/Instagram.svg"></a>
+            <a href=""><img src="./img/facebook.svg"></a>
+            <a href=""><img src="./img/Youtube.svg"></a>
+            <a href=""><img src="./img/tw.svg"></a>         
+        </div>
+
+    <!-- 맨 위로 가기 버튼-->
+        <button class="goto-top">
+            <a href="#"><img src="./img/goto-top.png" alt="맨 위로 이동"></a>
+        </button>
+
+        <p class="infor">Ⓒ 2022 MOVIES. ALL RIGHTS RESERVED</p>
+
+    </footer>
+
+    <script>
+        let cnt = 0;
+        let $gGenre = "0";
+
+        document.addEventListener("DOMContentLoaded", ready);
+    	
+        function ready(){  
+            
+            
+            if(cnt==0){
+                getFetch();
+                cnt++
+            }
+
+
+            let $inputEl = document.getElementById("searchInput");
+            let $searchImgEl = document.getElementById("searchImg");
+
+            // 검색창 엔터 이벤트
+            $inputEl.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    searchMovie();
+                }
+            });
+
+            // 돋보기 클릭했을 경우 이벤트
+            $searchImgEl.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    searchMovie();
+            });
+
+        }
+
+        let idx = localStorage.idx;
+
+        function moveFilter(e) {
+
+            let $buttonEls = e.parentElement.querySelectorAll("button");
+            $buttonEls.forEach(buttonEl=>{
+
+                if(e.value == buttonEl.value){
+
+                    buttonEl.style.color = '#ffffff';
+                    buttonEl.style.backgroundColor = "#82663e";
+
+                } else {
+
+                    buttonEl.style.color = '';
+                    buttonEl.style.backgroundColor = '';
+
+                }
+
+            })
+
+            // e.value
+            let filterDataList = [];
+
+            movieList.map(movieObj => {
+
+                // 전체 ( all )
+                if(e.value === "0"){
+                    filterDataList.push(movieObj);
+                    $gGenre = "0";
+                } else {
+
+                    // 전체 ( all ) 이 아닐 경우 영화 객체에서 장르 비교해서 해당 장르만 가져옴
+                    movieObj.genre_ids.map(genre => {
+
+                        // 전체 ( all ) 가 아닐 경우
+                        if (e.value == String(genre)) {
+                            filterDataList.push(movieObj);
+                        }
+
+                    })
+
+                    $gGenre = e.value;
+                }
+            })
+
+            makeMovileListHtml(filterDataList);
+            makePagingAreaHtml(filterDataList);
+        }
+
+        function makePagingAreaHtml(movieList){
+
+            let $pagingNumber = movieList.length / 24;
+            let $pagingAreaEl = document.querySelector("body > main > div.pageNumber");
+            let $pagingHtml = "";
+
+            if($pagingNumber >= 10){
+                $pagingNumber = 10;
+            }
+
+            if($pagingNumber >= 10) {
+                // $pagingHtml += '<a href="" id="first_page" onClick="paging(this);"><<</a>';
+                // $pagingHtml += '<a href="" id="prev_page" onClick="paging(this);"><</a>';
+            }
+            for(let cnt = 1 ; cnt <= $pagingNumber ; cnt ++){
+                if($pagingNumber <= 10) {
+                    $pagingHtml += '<a href="" onClick="paging(this);">' + cnt + '</a>';
+                }
+            }
+
+            if($pagingNumber >= 10) {
+                // $pagingHtml += '<a href="" id="next_page" onClick="paging(this);">></a>';
+                // $pagingHtml += '<a href="" id="last_page" onClick="paging(this);">>></a>';
+            }
+            $pagingAreaEl.innerHTML = $pagingHtml;
+        }
+
+        // localStorage.idx = idx;
+        function paging(e){
+            event.preventDefault();
+
+            // 4 * 6
+            let $pageNumber = e.text;
+            let $startPageNum = ( 24 * ( parseInt(e.text) - 1 )  ) + 1;
+            let $limitPageNum = 24 * parseInt(e.text);
+            let $pagingDataList = [];
+            let filterDataList = [];
+
+
+            // 24 , 49 ....
+            movieList.map((movieObj,index)=>{
+                let $allGenreCnt = 0;
+
+                movieObj.genre_ids.map(genre => {
+                    if ($gGenre == String(genre)) {
+                        filterDataList.push(movieObj);
+                    }
+
+                    if($allGenreCnt == 0) {
+                        if ($gGenre == "0") {
+                            filterDataList.push(movieObj);
+                            $allGenreCnt++;
+                        }
+                    }
+                })
+            })
+
+            filterDataList.map((movieObj, index) => {
+                if ($startPageNum <= index && $limitPageNum >= index) {
+                    $pagingDataList.push(movieObj)
+                }
+            })
+
+            makeMovileListHtml($pagingDataList); 
+
+        }
+
+        function searchMovie() {
+
+            let $inputValue = document.getElementById("searchInput");
+
+            // 호출할 함수나 기능 작성
+            let $makePopupHtml = '';
+            let $PopupBox1 = document.querySelector(".Popup-box1");
+
+            movieList.map(movieObj => {
+                if ($inputValue.value === movieObj.title) {
+
+                    $PopupBox1.classList.add('active');
+
+                    $makePopupHtml += '<div class="Popup-box2">';
+                    $makePopupHtml += '<img src="./img/Close.svg" class="Cancel" onclick="popClose();">';
+                    $makePopupHtml += '<ul class="Popup-box-list">';
+                    $makePopupHtml += '<li>';
+                    $makePopupHtml += '<h3>' + movieObj.title + '</h3>';
+                    $makePopupHtml += '<img class="movieImg" src=https://image.tmdb.org/t/p/w500'
+                        + movieObj.backdrop_path + '>';
+
+                    $makePopupHtml += '<div class="Popup-box-listText">';
+                    $makePopupHtml += '<p>' + movieObj.release_date + '</p>';
+                    $makePopupHtml += '<p>' + movieObj.popularity + '<span>' + '관객수' + '</span>'
+                        + '</p>';
+                    $makePopupHtml += '<form>';
+                    $makePopupHtml += '<img src="./img/Favorite.svg">';
+                    $makePopupHtml += '<span>' + movieObj.vote_average + '</span>';
+                    $makePopupHtml += '</form>';
+                    $makePopupHtml += '</div>';
+
+                    $makePopupHtml += '<p class="story">' + '줄거리' + '<span>' +
+                        movieObj.overview
+                        + '</span>' + '</p>';
+
+                    $makePopupHtml += '</li>';
+                    $makePopupHtml += '</ul>';
+                    $makePopupHtml += '</div>';
+
+                    $PopupBox1.innerHTML = $makePopupHtml;
+                }
+            })
+
+        }
+
+        function popClose(){
+            let $PopupBox1 = document.querySelector(".Popup-box1");
+            $PopupBox1.classList.remove('active');
+        }
+    </script> 
+</body>
+</html>

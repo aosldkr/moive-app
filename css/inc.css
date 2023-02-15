@@ -1,0 +1,32 @@
+html, body {
+  margin: 0px;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, p, figure {
+  margin: 0px;
+  color: #ffffff;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::after, ::before, em, strong, b, code {
+  display: inline-block;
+}/*# sourceMappingURL=inc.css.map */
